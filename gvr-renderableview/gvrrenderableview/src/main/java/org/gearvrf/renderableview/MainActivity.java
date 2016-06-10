@@ -21,9 +21,11 @@ import org.gearvrf.scene_objects.view.GVRFrameLayout;
 import org.gearvrf.scene_objects.view.GVRTextView;
 import org.gearvrf.scene_objects.view.GVRView;
 import org.gearvrf.scene_objects.view.GVRWebView;
+import org.gearvrf.utility.Log;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -73,5 +75,11 @@ public class MainActivity extends GVRActivity {
 
     public GVRView getTextView() {
         return mTextView;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        Log.v("GVRMainActivity", "KeyDown " + String.format("%d", keyCode));
+        return true;
     }
 }
