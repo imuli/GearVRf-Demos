@@ -621,8 +621,10 @@ public class ViewerMain extends GVRMain {
         mIsButtonDown = false;
         mIsSingleTapped = false;
 
-        if (isButtonDown)
+        if (isButtonDown) {
+            Log.w("hit", "attempting camera reset");
             mGVRContext.getMainScene().getMainCameraRig().resetYaw();
+        }
 
         // ---------------------------------------thumbnail motion
         boolean MoveActive = false;

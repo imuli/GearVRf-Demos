@@ -83,6 +83,15 @@ public class ViewerActivity extends GVRActivity implements
     }
 
     @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+            onBackPressed();
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
     public void onBackPressed() {
         if (System.currentTimeMillis() > mLatestButton + BUTTON_INTERVAL) {
             mLatestButton = System.currentTimeMillis();
